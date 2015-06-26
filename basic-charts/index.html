@@ -3,7 +3,37 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.8/processing.min.js"></script>
     <!-- Or include processing.js library locally -->
     <!-- script type="text/javascript" src="../lib/processing.min.js"></script -->
-    <script type="text/processing" src="bar_chart.pde" data-processing-target="mycanvas"></script>
+
+    <!-- include processing.js code as part of the html file, or refer to another file -->
+    <!-- script type = "text/processing" src="bar_chart.pde" data-processing-target="mycanvas" -->
+    <script type="text/processing" data-processing-target="mycanvas">
+    var x = { 50, 61, 83, 69, 71, 50, 29, 31, 17, 39 };
+
+    void setup() {
+      size(150, 150);
+
+      noStroke();
+      fill(80);
+      // Read one array element each time through the for loop
+      for (var i = 0; i < x.length; i++) {
+        rect(0, i * 15, x[i], 8);
+      }
+
+      drawLine();
+    }
+
+    void drawLine() {
+      for (var i = 1; i < x.length; i++) {
+        var start_x = x[i-1];
+        var start_y = 4 + (i-1) * 15;
+        var end_x = x[i];
+        var end_y = 4 + i * 15;
+
+        stroke(0, 200, 200);
+        line(start_x, start_y, end_x, end_y);
+      }
+    }
+  </script>
   </head>
 
   <canvas id="mycanvas"></canvas>

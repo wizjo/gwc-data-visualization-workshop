@@ -1,7 +1,7 @@
-int[] data = { 50, 61, 83, 69, 71, 50, 29, 31, 17, 39 };
-int index = 0;
-int sum = 0;
-float lastAngle = 0;
+var data = { 50, 61, 83, 69, 71, 50, 29, 31, 17, 39 };
+var index = 0;
+var sum = 0;
+var lastAngle = 0;
 
 void setup() {
   size(400, 400);
@@ -9,7 +9,7 @@ void setup() {
   noStroke();
   smooth();
 
-  for(int i = 0; i < data.length; i++) {
+  for(var i = 0; i < data.length; i++) {
     sum += data[i];
   }
 }
@@ -17,7 +17,7 @@ void setup() {
 void draw() {
 
   if(frameCount % 15 == 0) {
-    float angle = map(data[index], 0, sum, 0, TWO_PI);
+    var angle = map(data[index], 0, sum, 0, TWO_PI);
 
     fill(frameCount * 3 % 255, frameCount * 5 % 255, frameCount * 7 % 255, 180);
 

@@ -1,5 +1,5 @@
-int[] x = { 50, 61, 83, 69, 71, 50, 29, 31, 17, 39 };
-int i = 0;
+var x = { 50, 61, 83, 69, 71, 50, 29, 31, 17, 39 };
+var i = 0;
 
 void setup() {
   size(200, 200);
@@ -25,11 +25,11 @@ void draw() {
 }
 
 void drawLine() {
-  for(int j = 1; j < x.length; j++) {
-    int start_x = 10 + (j - 1) * 15;
-    int start_y = 200 - x[j-1] * 2;
-    int end_x = 10 + j * 15;
-    int end_y = 200 - x[j] * 2;
+  for(var j = 1; j < x.length; j++) {
+    var start_x = 10 + (j - 1) * 15;
+    var start_y = 200 - x[j-1] * 2;
+    var end_x = 10 + j * 15;
+    var end_y = 200 - x[j] * 2;
     stroke(50, 0, 255);
     line(start_x, start_y, end_x, end_y);
   }
